@@ -1,5 +1,5 @@
 public interface IVector {
-    public double abs();
-    public double cdot(Vector2D vector);
-    public double[] getComponents();
+    double abs();
+    double cdot(IVector other);
+    double[] getComponents();
 }

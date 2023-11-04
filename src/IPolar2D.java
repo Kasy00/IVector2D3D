@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public interface IPolar2D {
+public interface IPolar2D {
+    double getAngle();
+    double abs();
 }
