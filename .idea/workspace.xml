@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e33913dc-07e3-4a48-8f1d-8f919819d667" name="Changes" comment="Added Vector2D class and its interface IVector">
-      <change afterPath="$PROJECT_DIR$/src/Vector3DDecorator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Vector3DInheritance.java" afterDir="false" />
+    <list default="true" id="e33913dc-07e3-4a48-8f1d-8f919819d667" name="Changes" comment="Added changes to Vector3D">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IPolar2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IPolar2D.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/IVector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/IVector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Polar2DAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Polar2DAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TwoDPolarInheritance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TwoDPolarInheritance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vector2D.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vector2D.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vector3DDecorator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vector3DDecorator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vector3DInheritance.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vector3DInheritance.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +75,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698607732773</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added changes to Vector3D">
+      <option name="closed" value="true" />
+      <created>1699113145378</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699113145378</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -96,6 +99,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Vector2D class and its interface IVector" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Vector2D class and its interface IVector" />
+    <MESSAGE value="Added changes to Vector3D" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added changes to Vector3D" />
   </component>
 </project>

@@ -1,38 +1,52 @@
 import java.util.Arrays;
+import java.util.Vector;
 
 public class Main {
     public static void main(String[] args) {
-        Vector2D vector2d = new Vector2D(2, 3);
-        TwoDPolarInheritance vector2 = new TwoDPolarInheritance(4,3);
+        Vector2D vector2D_1 = new Vector2D(3, 4);
+        Vector2D vector2D_2 = new Vector2D(1, 2);
+        Vector2D vector2D_3 = new Vector2D(5,7);
 
-        Vector3DInheritance vector3DInheritance = new Vector3DInheritance(1, 2, 4);
-        Vector3DInheritance vector3DInheritance2 = new Vector3DInheritance(1, 2, 5);
-        Vector3DDecorator vector3DDecorator = new Vector3DDecorator(vector2d, 3);
+        displayCartesianCoordinates(vector2D_1);
+        displayCartesianCoordinates(vector2D_2);
+        displayCartesianCoordinates(vector2D_3);
 
-        displayCoordinates(vector3DInheritance);
-        calculateCDotAndCrossProducts(vector3DInheritance, vector2);
+        System.out.println("\n");
 
+        displayPolarCoordinates(new Polar2DAdapter(vector2D_1));
+        displayPolarCoordinates(new Polar2DAdapter(vector2D_2));
+        displayPolarCoordinates(new Polar2DAdapter(vector2D_3));
+
+        System.out.println("\n");
+
+        Vector3DDecorator decoratedVector_1 = new Vector3DDecorator(vector2D_1);
+        Vector3DDecorator decoratedVector_2 = new Vector3DDecorator(vector2D_2);
+        Vector3DDecorator decoratedVector_3 = new Vector3DDecorator(vector2D_3);
+
+        getScalarAndCrossProduct(decoratedVector_1, decoratedVector_2);
+        System.out.println("\n");
+
+        getScalarAndCrossProduct(decoratedVector_1, decoratedVector_3);
+        System.out.println("\n");
+
+        getScalarAndCrossProduct(decoratedVector_2, decoratedVector_3);
     }
 
-    public static void displayCoordinates(IVector vector){
-        System.out.println("Współrzędne wektora w układzie kartezjańskim: " + Arrays.toString(vector.getComponents()));
-
-        if(vector instanceof Vector2D){
-            Polar2DAdapter polar2DAdapter = new Polar2DAdapter((Vector2D) vector);
-            System.out.println("Współrzędne wektora w układzie biegunowym: " + "[" + vector.abs() + "," + " " + polar2DAdapter.getAngle() + "]");
-        }
+    public static void displayCartesianCoordinates(IVector vector){
+        System.out.println("Współrzędne kartezjańskie: " + Arrays.toString(vector.getComponents()));
     }
 
-    public static void calculateCDotAndCrossProducts(IVector vector1, IVector vector2) {
-        double cDot = vector1.cdot(vector2);
+    public static void displayPolarCoordinates(IPolar2D vector){
+        double abs = Math.round(vector.abs() * 100.0) / 100.0;
+        double angle = Math.round(vector.getAngle() * 100.0) / 100.0;
+        System.out.println("Współrzędne biegunowe: [" + abs + ", " + angle + "]");
+    }
 
-        if (vector1.getComponents().length == 3 && vector2.getComponents().length == 3) {
-            Vector3DInheritance crossProduct = ((Vector3DInheritance) vector1).cross(vector2);
-            System.out.println("Iloczyn skalarny: " + cDot);
-            System.out.println("Iloczyn wektorowy (współrzędne kartezjańskie): " + Arrays.toString(crossProduct.getComponents()));
-        }
-        else{
-            System.out.println("Iloczyn skalarny: " + cDot);
-        }
+    public static void getScalarAndCrossProduct(Vector3DDecorator vector1, Vector3DDecorator vector2){
+        double scalar = vector1.cdot(vector2);
+
+        Vector3DInheritance cross = vector1.cross(vector2);
+        System.out.println("Iloczyn skalarny: " + scalar);
+        System.out.println("Iloczyn wektorowy: " + Arrays.toString(cross.getComponents()));
     }
 }
